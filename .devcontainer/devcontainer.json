@@ -5,7 +5,8 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
     },
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
   "forwardPorts": [
     8000
@@ -16,7 +17,7 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postAttachCommand": "python -m http.server 8000",
+  "postAttachCommand": "pgrep -f '[h]ttp.server 8000' >/dev/null || python -m http.server 8000",
   "customizations": {
     "codespaces": {
       "openFiles": [
